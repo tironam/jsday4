@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+                integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+        <!-- <button id="catBtn">Cat</button>
+        <button id="dogBtn">Dog</button>
+        <button id="chickBtn">Chicken</button> -->
+
+        <!-- <div id="myDiv"></div> -->
+
+        <div id='animalBtns'></div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous">
+        </script>
+
+        <script>
+
+                const animals = [
+                                {
+                                        name: "cat",
+                                        cool: true,
+                                        sound: "meow"
+                                },
+                                {
+                                        name: "dog",
+                                        cool: true,
+                                        sound: "bark"
+                                },
+                                {
+                                        name: "chicken",
+                                        cool: true,
+                                        sound: "cockadoodledoo"
+                                },
+                                {
+                                        name: "racoon",
+                                        cool: false,
+                                        sound: "uhhhhhh i eat trash"
+                                },
+                                {
+                                        name: "horse",
+                                        cool: true,
+                                        sound: "neigh"
+                                },
+                                {
+                                        name: "skunk",
+                                        cool: false,
+                                        sound: "pshhh"
+                                },
+                                {
+                                        name: "bat",
+                                        cool: false,
+                                        sound: "sonar bshhhh"
+                                },
+                                {
+                                        name: "wolf",
+                                        cool: true,
+                                        sound: "howl"
+                                },
+                                {
+                                        name: "buffalo",
+                                        cool: true,
+                                        sound: "i have no idea"
+                                },
+                                {
+                                        name: "dragon",
+                                        cool: true,
+                                        sound: "roar"
+                                }
+                        ]
+                        
+                for (let i = 0; i < animals.length; i++) {
+                        let btnElem = document.createElement('button')
+                        btnElem.className = 'animal'
+                        btnElem.textcontent = animals[i].name
+                        btnElem.dataset.index = i
+                        document.getElementById('animalBtns').append(btnElem)
+                }
+
+                document.addEventListener('click', (event) => {
+                        if (event.target.className === 'animal') {
+                                let animal = animals[event.target.dataset.index]
+                                alert(`
+                                Name: ${animal.name}
+                                Sound: ${animal.sound}
+                                Cool: ${animal.cool}
+                                `)
+                        }
+                })
+                
+                // document.getElementById('catBtn').addEventListener('click', () => {
+                //         alert(`${animalArray[0].name}
+                //                 ${animalArray[0].cool}
+                //                 ${animalArray[0].sound}`)
+                //         }
+                // )
+
+                // document.getElementById('dogBtn').addEventListener('click', () => {
+                //         alert(`${animalArray[1].name}
+                //                 ${animalArray[1].cool}
+                //                 ${animalArray[1].sound}`)
+                //         }
+                // )
+
+                // document.getElementById('chickBtn').addEventListener('click', () => {
+                //                 alert(JSON.stringify)
+                // )
+                // }
+
+
+                // for (let i = 0; i < animalArray.length; i++) {
+
+                //         let userElem = document.getElementById('myDiv').innerHTML = `
+                //                 <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                //                         <div class="card-header">${animalArray[i].name}</div>
+                //                         <div class="card-body">
+                //                                 <h5 class="card-title">${animalArray[i].cool}</h5>
+                //                                 <p class="card-text">${animalArray[i].sound}</p>
+                //                         </div>
+                //                 </div>
+                //                 `
+                // }
+
+        </script>
+</body>
+</html>

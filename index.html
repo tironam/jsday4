@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+                integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+         <div id="userDiv"></div>
+        <!-- <div id="myDiv"></div> -->
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
+        <script>
+
+                let users =  [
+                {
+                        name: 'John Doe',
+                        email: 'johndoe@gmail.com',
+                        username: 'johndoe',
+                        password: 'password1234',
+                },
+                {
+                        name: 'Jane Doe',
+                        email: 'janedoe@gmail.com',
+                        username: 'janedoe',
+                        password: '1234password'
+                },
+                {
+                        name: 'Jack Doe',
+                        email: 'jackdoe@gmail.com',
+                        username: 'jackdoe',
+                        passwork: 'mypassword',
+                }
+                ]
+
+                for (let i = 0; i < users.length; i++) {
+                        
+                        let userElem = document.createElement('div')
+                        userElem.style.maxWidth = '18rem'
+                        userElem.className = 'card text-white bg-info mb-3'
+                        userElem.innerHTML = `
+                                <div class="card-header">${users[i].name}</div>
+                                <div class="card-body">
+                                        <h5 class="card-title">${users[i].name}</h5>
+                                        <p class="card-text">${users[i].username}</p>
+                                        <p p class="card-text">${users[i].password}</p>
+                                </div>
+                        `
+                        document.getElementById('userDiv').append(userElem)
+                }
+
+
+
+
+
+                // document.getElementById('userDiv').innerHTML = 
+                //         <div class="card" style="width: 18rem;">
+                //                 <img src="..." class="card-img-top" alt="...">
+                //                 <div class="card-body">
+                //                         <h5 class="card-title">${user.name}</h5>
+                //                         <p class="card-text">${user.username}</p>
+                //                         <p class="card-text">${user.password}</p>
+                //                         <a href="#" class="btn btn-primary">Go somewhere</a>
+                //                 </div>
+                //         </div>
+                //         `
+
+                // document.getElementById('userDiv').textContent = JSON.stringify(user)
+
+                // console.log(document.getElementById('myDiv').innerHTML = `<h1>Michael Tirona</h1><p>Disney almost made an attraction based on the "Alien" franchise before George Lucas talked Disney's CEO out of putting an R-rated film in a Disney park</p> `)
+        </script>
+</body>
+</html>

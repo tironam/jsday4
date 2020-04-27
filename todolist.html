@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<body>
+        
+        <form>
+                <p>
+                <label for="to-do list">To-do List</label>
+                </p>
+                <input type="text" name="text" id="text">
+                <button id="subBtn">Submit</button>
+        </form>
+
+        <div id="info"></div>
+
+        <script>
+
+                document.getElementById('subBtn').addEventListener('click', event => {
+                        event.preventDefault()
+                        document.getElementById('info').innerHTML = `
+                        <h3>${document.getElementById('text').value}</h3>
+                        `
+                        document.getElementById('info').value = ' '
+                })
+
+        </script>
+</body>
+</html>
